@@ -24,11 +24,11 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
-    working_directory: /tmp
+    working_directory: /tmp/senthil10032022
     steps:
       - checkout
       - run:
-          name: Creating Dummy Artifacts
+          name: Creating Artifacts
           command: './mvnw package'
           
       - store_artifacts:
