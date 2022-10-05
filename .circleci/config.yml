@@ -17,25 +17,9 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  build:
-    working_directory: /tmp/mahesh10032022
-    steps:
-      - checkout
-      - run:
-          name: Creating Artifacts
-          command: mvn package
-          
-      - store_artifacts:
-          path: /tmp/artifact-1678
-          destination: artifact-file
-
-      - store_artifacts:
-          path: /tmp/artifacts-1678
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - build
       - say-hello
